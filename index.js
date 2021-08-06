@@ -1,11 +1,10 @@
 const express = require('express');
 const parser = require('body-parser');
 const mongoose = require('mongoose');
-const secrets = require('./secrets');
 const eventRoutes = require('./routes/eventRoutes');
 
 mongoose.connect(
-  `mongodb+srv://Julia:${secrets.mongoosePassword}@cluster0.z3kqj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  `mongodb+srv://Julia:1993Gjgf1210@cluster0.z3kqj.mongodb.net/Reminder`,
   { useNewUrlParser: true },
 );
 
