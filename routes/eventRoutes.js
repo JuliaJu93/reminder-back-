@@ -2,10 +2,10 @@ const { Router } = require('express');
 const Event = require('../models/Event');
 const router = Router();
 
-router.get('/', (req, res) => {
-  console.log('req to mainPath');
+router.get('/events', async (req, res) => {
+  const events = await Event.find({});
 
-  res.json('mainRoute response');
+  res.json(events);
 });
 
 router.post('/events', async (req, res) => {
@@ -22,10 +22,11 @@ router.post('/events', async (req, res) => {
   res.json({ status: 'ok', text: 'event saved' });
 });
 
-router.get('/events', async (req, res) => {
-  const events = await Event.find({});
+router.delete('/events/:id', async (req, res) => {
+  const eventId = req.params.id;
 
-  res.json(events);
+  await Event.findByIdAndDelete(eventId);
+  res.status(204).send();
 });
 
 module.exports = router;
