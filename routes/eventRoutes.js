@@ -23,7 +23,7 @@ router.post('/events', async (req, res) => {
 });
 
 router.delete('/events/:id', async (req, res) => {
-  const eventId = req.params.id;
+  const eventId = req.body.id;
 
   await Event.findByIdAndDelete(eventId);
   res.status(204).send();
