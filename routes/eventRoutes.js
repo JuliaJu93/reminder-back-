@@ -10,7 +10,6 @@ router.get('/events', async (req, res) => {
 
 router.post('/events', async (req, res) => {
   const { title, date } = req.body;
-  console.log(title, date);
 
   const event = new Event({
     title,

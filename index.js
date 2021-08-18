@@ -5,7 +5,7 @@ const eventRoutes = require('./routes/eventRoutes');
 
 mongoose.connect(
   `mongodb+srv://Julia:1993Gjgf1210@cluster0.z3kqj.mongodb.net/Reminder`,
-  { useNewUrlParser: true },
+  {useNewUrlParser: true, useUnifiedTopology: true}
 );
 
 const app = express();
